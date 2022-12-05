@@ -16,7 +16,10 @@ console.log("Part One: ", prioritySum);
 // Part Two
 const elfBadgeSum = Array.from({length: rucksacks.length / 3}, () => rucksacks.splice(0, 3))
     .map(elfGroup => elfGroup.map(elf => elf.split('')))
-    .map(elfGroup => elfGroup[0].filter(value => elfGroup[1].includes(value)).filter(value => elfGroup[2].includes(value))[0].charCodeAt(0))
+    .map(elfGroup => elfGroup[0]
+        .filter(value => elfGroup[1].includes(value))
+        .filter(value => elfGroup[2].includes(value))[0]
+        .charCodeAt(0))
     .map(badge => badge > 90 ? badge - 96 : badge - 38)
     .reduce((sum, x) => sum + x, 0);
 ;
