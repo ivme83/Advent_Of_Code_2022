@@ -1,6 +1,7 @@
 const fs = require('fs');
 const input = fs.readFileSync('./day_05/day_05_input.txt', 'utf8');
 const splitInput = input.split('\r\n\r\n').map(x => x.split('\r\n'));
+console.log('splitInput: ', splitInput);
 
 // Part One
 let stacks = [];
